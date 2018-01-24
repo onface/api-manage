@@ -56,7 +56,7 @@
         <tr>
             <td align="center" >
                 <a class="face-one-feature-item" href="https://github.com/nimojs">
-                    <img src="https://github.com/nimojs.png" alt="" class="face-one-feature-item-photo">
+                    <img width="150 height="150" src="https://github.com/nimojs.png" alt="" class="face-one-feature-item-photo">
                     <br />
                     <div class="face-one-feature-item-label">NimoChu</div>
                 </a>
