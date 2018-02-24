@@ -1,133 +1,86 @@
-# 文档
+# API
 
-## 登录
-
-接口文档如下:
-
-```
-POST /login
-request:
-    {
-        user: 'nimo',
-        password: '12345'
-    }
-response:
-    {
-        status: 'ok'
-    }
-    {
-        status: 'error',
-        // 错误代码： 分别有 1 用户名错误, 2 密码错误 3 用户被禁用
-        code: '1'
-    }
-```
-封装
 ```js
-// api/login.js
-var ApiManage = require('api-manage')
-var dict = request('code-dict')
-dict.addCode('loginFail', {
-    'user error': '1',
-    'password error': '2',
-    'user disabled': '3'
-})
-var apiManage = new ApiManage({
-    fetch: function (settings, callback) {
-        return $.ajax(settings)
-            .done(callback.done)
-            .fail(function(executeAction) {
-                if (executeAction) {
-                    alert('网络错误')
-                }
-                callback.fail.apply(,callback.fail)
-            })
-            .always(callback.always)
+var api = new BetterAPI({
+    defaultSettings: {
+        dataType: 'json'
     },
-    doneJudgeType: function (res) {
-        return res.status
-    }
-})
-module.exports = apiManage({
-    url: '/login',
     input: function (req) {
-        // req = request
         return req
     },
     output: function (res) {
-        // res = response
-        res.$code = dict('loginFail', res.code)
-        /*
-         *
-         * 如果需要中文消息，可以在此处扩展数据
-         *
-         * var msgMap = {
-         *     'user error': '用户不存在',
-         *     'password error': '密码错误',
-         *     'user disabled': '用户被禁用'
-         * }
-         * res.$msg = msgMap[res.$code]
-         */
+        return res
     },
-    defaultDoneType: {
+    fetch: function (settings, callback) {
+        $.ajax(settings)
+            .done(callback.$net.done)
+            .fail(function(){
+                if (typeof callback.$net.fail === 'function') {
+                    callback.$net.fail.apply( ,arguments)
+                }
+                else {
+                    if (arguments[1] !== 'abort') {
+                        alert('网络错误，请刷新重试')
+                    }
+                }
+            })
+            .always(callback.$after)
+    },
+    judgeResponseType: function (res) {
+        return res.status
+    },
+    defaultResponseType: {
         error: function (res) {
-            alert('错误', res.$code)
+            alert(res.msg)
         }
     }
 })
-```
 
-经过封装，接口调用方式应该是：
-
-```js
-var apiLogin = require('./api/login')
+var apiLogin = api.create({
+    settings: {
+        url: '/login',
+        type: 'post'
+        // dataType: 'json' // 在 defaultSettings 已经定义，无需配置
+    },
+    input: function (req) {
+        return req
+    },
+    output: function (res) {
+        return res
+    }
+})
 apiLogin({
     user: 'nimo',
-    password: '12345'
+    passwrod: '1234'
 }, {
-    ok: function () {
-        location.href = '/system'
-    },
-    error: function (res) {
-        alert(res.$code)
-    },
     // 请求发送前执行，适合修改 loading 状态
-    before: function () {
+    $before: function () {
 
     },
-    after: function () {
-        // 无论成功失败都会执行
+    // responseType: success
+    success: function (res) {
+
     },
-    // 网络层面的请求结果, 比如 $.ajax().done().fail().always()
-    net: {
-        settings: {
-            timeout: 2000,
+    /*
+    // responseType: error
+    error: function (res) {
+
+    },
+    */
+    // 请求发送完成后执行，无论是否成功，适合修改 loading 状态
+    $after: function () {
+
+    },
+    // 一般情况下用不到 $net
+    /*
+    $net: {
+        done: function () {
+
         },
-        done: function (commonAction) {
-            commonAction()
-        },
-        // 网络失败
-        fail: function (commonAction) {
-            // commonAction 是一些公用执行方法，比如配置了网络错误出现弹窗
-            commonAction()
-        },
-        ""
-        always: function (commonAction) {
-            commonAction()
+        fail: function () {
+
         }
     }
+    */
 })
-apiLogin.isBusy() // return boolean
-// 如果 fetch 用的是 jQuery.ajax ，这里的 fetch 就是 jQuery.ajax 返回的 jqXHR
-apiLogin.fetch.abort()
 ```
-
-````code
-{
-    title: '登录',
-    desc: '',
-    html: '<div id="basic-demo" ></div>',
-    js: './basic.demo.js',
-    source: './basic.demo.js',
-    open: true
-}
-````
