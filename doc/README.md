@@ -11,12 +11,13 @@ var api = new BetterAPI({
     output: function (res) {
         return res
     },
-    fetch: function (settings, callback) {
+    fetch: function (data, settings, callback) {
+        settings.data = data
         $.ajax(settings)
             .done(callback.$net.done)
             .fail(function(){
                 if (typeof callback.$net.fail === 'function') {
-                    callback.$net.fail.apply( ,arguments)
+                    callback.$net.fail.apply(null ,arguments)
                 }
                 else {
                     if (arguments[1] !== 'abort') {
