@@ -16,7 +16,7 @@
         "test:ci": "./node_modules/karma/bin/karma start ./compile/karma.ci.js"
     },
     "$username": "onface",
-    "$repository": "api-manage",
+    "$repository": "better-api",
     "dependencies": {
         "extend": "^3.0.1"
     },

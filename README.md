@@ -1,4 +1,4 @@
-# api-manage
+# better-api
 
 <!--MR-D{tpl: 'home'}-->
 
@@ -7,15 +7,15 @@
 -->
 
 <div class="face-one-intro">
-    <div class="face-one-intro-title">api-manage</div>
+    <div class="face-one-intro-title">better-api</div>
     <h2 class="face-one-intro-desc">
         前后端交互接口封装管理
     </h2>
     <div class="face-one-intro-tool">
-        <a href="https://onface.github.io/api-manage" class="face-one-intro-btn face-one-intro-btn--primary mr-online-hide" >在线文档</a>
+        <a href="https://onface.github.io/better-api" class="face-one-intro-btn face-one-intro-btn--primary mr-online-hide" >在线文档</a>
         <!-- MARKRUN-HTML
             <a href="./doc/intro.md" class="face-one-intro-btn face-one-intro-btn--primary">指引</a>
-            <a href="http://github.com/onface/api-manage" class="face-one-intro-btn">GITHUB</a>
+            <a href="http://github.com/onface/better-api" class="face-one-intro-btn">GITHUB</a>
         -->
     </div>
 </div>
@@ -56,7 +56,7 @@
         <tr>
             <td align="center" >
                 <a class="face-one-feature-item" href="https://github.com/nimojs">
-                    <img width="150 height="150" src="https://github.com/nimojs.png" alt="" class="face-one-feature-item-photo">
+                    <img src="https://github.com/nimojs.png" alt="" class="face-one-feature-item-photo">
                     <br />
                     <div class="face-one-feature-item-label">NimoChu</div>
                 </a>
