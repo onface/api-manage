@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<link rel="stylesheet" href="theme/face/face.css">
+<meta name="keywords" content="">
+<meta name="description" content="指引">
+<title>指引</title>
+</head>
+<body>
+<div class="face-one-head">
+    <a class="face-one-head-logo" href="../index.html">
+        <img src="theme/media/logo.svg" alt="" class="face-one-head-logo-photo" />
+        face
+    </a>
+    <span class="face-one-head-slogan">
+        Write less code, do more things!
+    </span>
+    <!-- <div class="face-one-head-search">
+        <span class="face-one-head-search-icon fi fi-search"></span>
+        <input type="text" class="face-one-head-search-input" placeholder="搜索..." />
+    </div> -->
+    <div class="face-one-head-nav">
+        <span class="face-one-head-nav-switch fi fi-bars"></span>
+        <div class="face-one-head-nav-F-cnt">
+            <a href="../index.html" class="face-one-head-nav-link">首页</a>
+            <a href="intro.html" class="face-one-head-nav-link">指引</a>
+            <a href="index.html" class="face-one-head-nav-link">文档</a>
+        </div>
+        <script>
+        Array.from(document.querySelectorAll('.face-one-head-nav-link')).forEach(function (node) {
+            if (node.href) {
+                var pathname = node.href.replace(/\?.*/, '')
+                if (pathname === location.origin + location.pathname) {
+                    node.setAttribute('class', node.getAttribute('class') + ' ' + 'face-one-head-nav-link--on')
+                }
+            }
+        })
+        </script>
+    </div>
+</div>
+
+<div class="face-one-layout">
+<div class="face-one-layout-F-line">
+<div class="face-one-layout-sidebar">
+<div class="face-one-nav">
+<span class="face-one-nav-switch fi fi-angle-double-right"></span>
+<div class="face-one-nav-F-inner">
+<div class="face-one-nav-item face-one-nav-item--on">
+    <a href="intro.html" class="face-one-nav-item-label">指引</a>
+</div>
+<!-- face-one-nav-item--group-on 控制默认展开 -->
+<div class="face-one-nav-item face-one-nav-item--group face-one-nav-item--group-on">
+    <span class="face-one-nav-item-switch fi fi-angle-down"></span>
+    <span class="face-one-nav-item-label">
+        文档
+    </span>
+    <div class="face-one-nav-item-group">
+        <a href="index.html" class="face-one-nav-item-group-item">索引</a>
+    </div>
+</div>
+
+</div>
+</div>
+</div>
+<div class="face-one-layout-cnt">
+<div id="face-one-cnt" class="face-one-cnt markdown-body">
+<div id="face-one-sidebar" class="face-one-sidebar"></div>
+<h1 id="指引" ><a class="markrun-anchor" href="../Users/nimo/Documents/git/better-api/#指引"><span class="markrun-anchor-link"></span></a>指引</h1><blockquote>
+<p>使用一个组件或模块之前，应当知道它能解决的问题是什么，不能解决的问题是什么。使用的最佳实践是什么？</p>
+</blockquote>
+<blockquote>
+<p>建议读者看完这篇指引后，根据自己业务情况决定要不要使用 <code>api-manage</code> 。活动页面的零时网站和数据接口良好的项目不一定需要 <code>api-manage</code>。</p>
+</blockquote>
+<h2 id="为什么要封装" ><a class="markrun-anchor" href="../Users/nimo/Documents/git/better-api/#为什么要封装"><span class="markrun-anchor-link"></span></a>为什么要封装</h2><ol>
+<li>过滤服务器端数据</li>
+<li>统一管理和语义化接口</li>
+</ol>
+<h3 id="过滤服务器端数据" ><a class="markrun-anchor" href="../Users/nimo/Documents/git/better-api/#过滤服务器端数据"><span class="markrun-anchor-link"></span></a>过滤服务器端数据</h3><pre><code class="lang-js"><span class="hljs-comment">// GET /user</span>
+[
+    {
+        <span class="hljs-class"><span class="hljs-keyword">type</span></span>: <span class="hljs-number">0</span>, <span class="hljs-comment">// 未激活</span>
+        name: <span class="hljs-symbol">'nim</span>o'
+
+    },
+    {
+        <span class="hljs-class"><span class="hljs-keyword">type</span></span>: <span class="hljs-number">1</span>, <span class="hljs-comment">// 已激活</span>
+        name: <span class="hljs-symbol">'ti</span>m'
+    },
+    {
+        <span class="hljs-class"><span class="hljs-keyword">type</span></span>: <span class="hljs-number">2</span>, <span class="hljs-comment">// 禁用</span>
+        name: <span class="hljs-symbol">'wisdo</span>m'
+    }
+]
+</code></pre>
+<p>如果直接使用此数据，前端逻辑代码会变得很糟糕。</p>
+<pre><code class="lang-js"><span class="hljs-keyword">if</span> (user.<span class="hljs-keyword">type</span> <span class="hljs-type">=== </span><span class="hljs-number">2</span>) {
+    alert('用户被禁用')
+}
+</code></pre>
+<h3 id="统一管理和语义化接口" ><a class="markrun-anchor" href="../Users/nimo/Documents/git/better-api/#统一管理和语义化接口"><span class="markrun-anchor-link"></span></a>统一管理和语义化接口</h3><p>有时候会遇到多个页面请求同一个接口的情况</p>
+<pre><code class="lang-js">// 下面这段代码需要出现在 newsAdd.js 和 somePage.js 文件中
+$.ajax({
+    <span class="hljs-built_in">type</span>: <span class="hljs-string">'post'</span>,
+    ur<span class="hljs-variable">l:</span> <span class="hljs-string">'/news'</span>,
+    dataType: <span class="hljs-string">'json'</span>
+}).done(<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(res)</span> {</span>
+    /** <span class="hljs-keyword">res</span> 数据格式
+        {
+            statu<span class="hljs-variable">s:</span> <span class="hljs-string">'pass'</span>,
+            newsid: <span class="hljs-string">'egvw423h35hy35hqgwfwsfw2'</span>
+        }
+        {
+            statu<span class="hljs-variable">s:</span> <span class="hljs-string">'fail'</span>,
+            code: <span class="hljs-string">'sensitiveWords'</span>
+        }
+     */
+     var failDict = {
+         <span class="hljs-string">'sensitiveWords'</span>: <span class="hljs-string">'包含敏感词'</span>,
+         <span class="hljs-string">'limit'</span>: <span class="hljs-string">'每分钟只能发布一条新闻'</span>
+     }
+     <span class="hljs-keyword">if</span> (<span class="hljs-keyword">res</span>.status === <span class="hljs-string">'pass'</span>) {
+
+         /* newsAdd.js 只需要弹窗 */
+         alert(<span class="hljs-string">'添加新闻成功'</span>)
+
+         /* somePage.js 需要跳转到新闻页 */
+         // location.href = <span class="hljs-string">'/news?id='</span> + newsid
+
+     }
+     <span class="hljs-keyword">else</span> {
+         <span class="hljs-keyword">let</span> failMessage = failDict[<span class="hljs-keyword">res</span>.code]
+         <span class="hljs-keyword">if</span>(typeof failMessage === <span class="hljs-string">'undefined'</span>) {
+             alert(<span class="hljs-string">'添加失败，请联系管理员！错误代码：'</span> + <span class="hljs-keyword">res</span>.code)
+         }
+         <span class="hljs-keyword">else</span> {
+             alert(failMessage)
+         }
+     }
+})
+</code></pre>
+<p>两个文件同时存在一样的代码，会难以维护。但是两个文件对于 <code>res.status === &#39;pass&#39;</code> 情况下的处理方式又不同</p>
+<h2 id="如何使用" ><a class="markrun-anchor" href="../Users/nimo/Documents/git/better-api/#如何使用"><span class="markrun-anchor-link"></span></a>如何使用</h2><h3 id="数据过滤" ><a class="markrun-anchor" href="../Users/nimo/Documents/git/better-api/#数据过滤"><span class="markrun-anchor-link"></span></a>数据过滤</h3><p>我们期望后端返回的数据是</p>
+<pre><code class="lang-js">[
+    {
+        name: <span class="hljs-symbol">'nim</span>o',
+        <span class="hljs-comment">// 连注释都不用写了</span>
+        <span class="hljs-class"><span class="hljs-keyword">type</span></span>: <span class="hljs-symbol">'inactiv</span>e'
+    },
+    {
+        name: <span class="hljs-symbol">'ti</span>m',
+        <span class="hljs-class"><span class="hljs-keyword">type</span></span>: <span class="hljs-symbol">'activ</span>e'
+    },
+    {
+        name: <span class="hljs-symbol">'wisdo</span>m',
+        <span class="hljs-class"><span class="hljs-keyword">type</span></span>: <span class="hljs-symbol">'disabl</span>e'
+    }
+]
+</code></pre>
+<h3 id="统一管理和语义化接口" ><a class="markrun-anchor" href="../Users/nimo/Documents/git/better-api/#统一管理和语义化接口"><span class="markrun-anchor-link"></span></a>统一管理和语义化接口</h3><p>封装后可以非常优雅的调用接口</p>
+<pre><code class="lang-js"><span class="hljs-comment">// newsAdd.js</span>
+<span class="hljs-keyword">var</span> apiNews = <span class="hljs-built_in">require</span>(<span class="hljs-string">'./m/api/news'</span>)
+<span class="hljs-keyword">var</span> sendData = {
+    <span class="hljs-attr">title</span>: <span class="hljs-string">'abc'</span>,
+    <span class="hljs-attr">content</span>: <span class="hljs-string">'xxxxoxoxoxoxox'</span>
+}
+apiNews.post(
+    sendData,
+    {
+        <span class="hljs-attr">pass</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+            alert(<span class="hljs-string">'添加新闻成功'</span>)
+        },
+        <span class="hljs-attr">fail</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">failMessage, code</span>) </span>{
+            alert(failMessage)
+        }
+    }
+)
+</code></pre>
+<pre><code class="lang-js"><span class="hljs-comment">// somePage.js</span>
+<span class="hljs-keyword">var</span> apiNews = <span class="hljs-built_in">require</span>(<span class="hljs-string">'./m/api/news'</span>)
+
+<span class="hljs-keyword">var</span> sendData = {
+    <span class="hljs-attr">title</span>: <span class="hljs-string">'abc'</span>,
+    <span class="hljs-attr">content</span>: <span class="hljs-string">'xxxxoxoxoxoxox'</span>
+}
+apiNews.post(
+    sendData,
+    {
+        <span class="hljs-attr">pass</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">newsid</span>) </span>{
+            alert(<span class="hljs-string">'添加新闻成功，跳转至新闻页'</span>)
+            location.href = <span class="hljs-string">'/news?id='</span> + newsid
+        },
+        <span class="hljs-attr">fail</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">failMessage, code</span>) </span>{
+            alert(failMessage)
+        }
+    }
+)
+</code></pre>
+<h2 id="封装的分层" ><a class="markrun-anchor" href="../Users/nimo/Documents/git/better-api/#封装的分层"><span class="markrun-anchor-link"></span></a>封装的分层</h2><p>封装接口分为以下四个层面</p>
+<ol>
+<li><strong>底层</strong>: XHR - ES6 fetch - wx.request</li>
+<li><strong>语法封装</strong>：jQuery.ajax</li>
+<li><strong>项目通用业务逻辑封装</strong>：proxy （网络错误 alert 弹窗，或者将错误发送到服务器端,服务器超过规定时间未响应，则弹出错误）</li>
+<li><strong>具体接口语义化封装</strong>： apiLogin(data, settings) settings.pass settings.error  settings.inactive</li>
+</ol>
+<p><code>api-manage</code> 负责 3/4 的封装。底层一般由客户端环境（浏览器）提供。语法封装根据底层决定选择哪个库，或者根据业务情况自行编写。</p>
+<h2 id="字典辅助" ><a class="markrun-anchor" href="../Users/nimo/Documents/git/better-api/#字典辅助"><span class="markrun-anchor-link"></span></a>字典辅助</h2><p>有时候后端返回的 <code>type</code> 不是英文单词，而是自然数 <code>1</code> <code>2</code> <code>3</code> <code>4</code>。这种情况可以使用 <code>code-dict</code></p>
+<pre><code class="lang-js"><span class="hljs-keyword">var</span> dict = require(<span class="hljs-string">'code-dict'</span>)
+dict.addCode(<span class="hljs-string">'sms'</span>, {
+    <span class="hljs-string">'login'</span>: <span class="hljs-number">1</span>,
+    <span class="hljs-string">'register'</span>: <span class="hljs-number">2</span>
+})
+dict.<span class="hljs-keyword">get</span>(<span class="hljs-string">'sms'</span>, <span class="hljs-string">'login'</span>) <span class="hljs-comment">// 1</span>
+dict.<span class="hljs-keyword">get</span>(<span class="hljs-string">'sms'</span>, <span class="hljs-string">'1'</span>) <span class="hljs-comment">// login</span>
+<span class="hljs-comment">// 因为数据有时候返回的是 1 有时返回的是 "1" 。前端对接口返回的严谨性不可控，所以允许 1 == "1"</span>
+dict.<span class="hljs-keyword">get</span>(<span class="hljs-string">'sms'</span>, <span class="hljs-number">1</span>) <span class="hljs-comment">// login</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+<script>
+Array.from(document.querySelectorAll('.face-one-nav-item-label')).forEach(function (node) {
+    if (node.href) {
+        var pathname = node.href.replace(/\?.*/, '')
+        if (pathname === location.origin + location.pathname + location.hash) {
+            node.setAttribute('class', node.getAttribute('class') + ' ' + 'face-one-nav-item-label--on')
+        }
+    }
+})
+var faceOneGetParent = function faceOneGetParent (el, className) {
+   if (el.parentNode.nodeName.toLowerCase() === 'html') {
+       return null
+   }
+   var parentClassName = el.parentNode.getAttribute('class')
+   var classNames = ''
+   if (parentClassName) {
+       classNames = parentClassName.split(' ')
+   }
+   if (classNames.indexOf(className) !== -1) {
+       return el.parentNode
+   }
+   else {
+       return faceOneGetParent(el.parentNode, className)
+   }
+}
+Array.from(document.querySelectorAll('.face-one-nav-item-group-item')).forEach(function (node) {
+    addAvativeClass(node)
+    function addAvativeClass (node)  {
+        if (node.href) {
+            var pathname = node.href.replace(/\?.*/, '')
+            if (pathname === location.origin + location.pathname + location.hash) {
+                node.setAttribute('class', node.getAttribute('class') + ' ' + 'face-one-nav-item-group-item--on')
+                var parentNode = faceOneGetParent(node, 'face-one-nav-item--group')
+                if (parentNode) {
+                    parentNode.setAttribute('class', parentNode.getAttribute('class') + ' ' + 'face-one-nav-item--group-on')
+                }
+            }
+        }
+    }
+
+})
+</script>
+<div class="face-one-foot">
+    <div class="face-one-foot-F-inner">
+        <div class="face-one-foot-group">
+            <div class="face-one-foot-group-title">
+                <span class="face-one-foot-group-title-icon fi fi-github"></span>
+                Github
+            </div>
+            <div class="face-one-foot-group-item">
+                <a href="https://github.com/onface/better-api" class="face-one-foot-group-item-link">better-api</a>
+                - 项目源码
+            </div>
+        </div>
+        <div class="face-one-foot-group">
+            <div class="face-one-foot-group-title">
+                <span class="face-one-foot-group-title-icon fi fi-link"></span>
+                相关站点
+            </div>
+            <div class="face-one-foot-group-item">
+                <a href="https://github.com/onface/module" class="face-one-foot-group-item-link">module</a>
+                - 开源项目脚手架
+            </div>
+            <div class="face-one-foot-group-item">
+                <a href="http://onface.cc/" class="face-one-foot-group-item-link">onface.cc</a>
+                - 资源集合
+            </div>
+        </div>
+        <div class="face-one-foot-group">
+            <div class="face-one-foot-group-title">
+                <span class="face-one-foot-group-title-icon fi fi-users"></span>
+                社区
+            </div>
+            <div class="face-one-foot-group-item">
+                <a href="https://github.com/onface/better-api/issues" class="face-one-foot-group-item-link">Github issues</a>
+            </div>
+            <div class="face-one-foot-group-item">
+                <a href="https://github.com/onface/better-api/issues/new" class="face-one-foot-group-item-link">提交bug</a>
+            </div>
+        </div>
+        <div class="face-one-foot-copyright">
+            <a href="../index.html" class="face-one-foot-copyright-title">
+                <img src="theme/media/logo.svg" class="face-one-foot-copyright-title-logo" />
+            </a>
+        </div>
+    </div>
+</div>
+
+<script src="theme/jquery.js"></script>
+<script>delete window.$</script>
+<script src="theme/face/face.js" ></script>
+</body>
+</html>
