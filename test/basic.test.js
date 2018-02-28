@@ -18,7 +18,6 @@ var api = new BetterAPI({
         settings.data = data
         ajax(settings, {
             done:callback.$net.done,
-            // TODO:// 待测试 fail
             fail: function () {
                 if (typeof callback.$net.fail === 'function') {
                     callback.$net.fail.apply(null, arguments)
@@ -102,7 +101,6 @@ describe('basic', () => {
                     }, 12)
                 },
                 /*
-                // TODO:// 待测试 error
                 // responseType: error
                 error: function (res) {
 
