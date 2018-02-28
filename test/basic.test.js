@@ -25,7 +25,8 @@ var api = new BetterAPI({
                 }
                 else {
                     if (arguments[1] !== 'abort') {
-                        alert('网络错误，请刷新重试')
+                        window.errorLog = window.errorLog || []
+                        window.errorLog.push('网络错误，请刷新重试')
                     }
                 }
             },
@@ -122,4 +123,99 @@ describe('basic', () => {
             }
         )
     });
+    it('basic net fail', (done) => {
+        api.create({
+            settings: {
+                url: '/login-fail',
+                type: 'post'
+            }
+        })( {
+                user: 'nimo',
+                passwrod: '1234'
+            },
+            {
+                success: function (res) {
+                    expect('success不应该被调用').to.equal()
+                },
+                $net: {
+                    done: function (res) {
+                        expect('$net.done不应该被调用').to.equal()
+                    },
+                    fail: function (msg) {
+                        expect(msg).to.equal('失败原因')
+                        expect(window.errorLog).to.equal(undefined)
+                        done()
+                    }
+                }
+            }
+        )
+    });
+    it('default net fail', (done) => {
+        api.create({
+            settings: {
+                url: '/login-fail',
+                type: 'post'
+            }
+        })( {
+                user: 'nimo',
+                passwrod: '1234'
+            },
+            {
+                $after: function () {
+                    expect(JSON.stringify(window.errorLog)).to.equal(JSON.stringify([ '网络错误，请刷新重试' ]))
+                    done()
+                },
+                success: function (res) {
+                    expect('success不应该被调用').to.equal()
+                },
+                $net: {
+                    done: function (res) {
+                        expect('$net.done不应该被调用').to.equal()
+                    }
+                }
+            }
+        )
+    })
+    it('response error', (done) => {
+        api.create({
+            settings: {
+                url: '/login-error',
+                type: 'post'
+            }
+        })( {
+                user: 'nimo',
+                passwrod: '1234'
+            },
+            {
+                error: function (res) {
+                    expect(res.status).to.equal('error')
+                    done()
+                }
+            }
+        )
+    })
+    it('response error output', (done) => {
+        api.create({
+            settings: {
+                url: '/login-error-output',
+                type: 'post'
+            },
+            output: function (res) {
+                if (res.status === '0') {
+                    res.status = 'error'
+                }
+                return res
+            }
+        })( {
+                user: 'nimo',
+                passwrod: '1234'
+            },
+            {
+                error: function (res) {
+                    expect(res.status).to.equal('error')
+                    done()
+                }
+            }
+        )
+    })
 })
