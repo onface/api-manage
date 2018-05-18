@@ -7,7 +7,7 @@ var api = new BetterAPI({
     input: function (req) {
         return req
     },
-    output: function (res) {
+    output: function (res, req) {
         return res
     },
     fetch: function (data, settings, callback) {
@@ -17,6 +17,7 @@ var api = new BetterAPI({
                 .fail(function () {
                     if (typeof callback.$net.fail === 'function') {
                         callback.$net.fail.apply(null, arguments)
+                    // var getUser = $.ajax();  getUser.abort()
                     } else if (arguments[1] !== 'abort') {
                         alert('网络错误，请刷新重试')
                     }
@@ -33,13 +34,13 @@ var api = new BetterAPI({
 })
 var apiPass = api.create({
     settings: {
-        url: 'http://echo.onface.cc/onface/better-api/master/doc/mock/pass',
+        url: 'http://echo.onface.live/onface/better-api/master/doc/mock/pass',
         type: 'get'
     }
 })
 var apiFail = api.create({
     settings: {
-        url: 'http://echo.onface.cc/onface/better-api/master/doc/mock/fail',
+        url: 'http://echo.onface.live/onface/better-api/master/doc/mock/fail',
         type: 'get'
     }
 })
@@ -79,4 +80,4 @@ $(function () {
         )
     })
 })
-// http://echo.onface.cc/onface/better-api/master/doc/mock/pass
+// http://echo.onface.live/onface/better-api/master/doc/mock/pass

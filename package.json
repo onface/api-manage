@@ -1,7 +1,7 @@
 {
     "name": "better-api",
     "main": "lib/index.js",
-    "version": "0.2.3",
+    "version": "0.2.4",
     "description": "api encapsulation manage",
     "keywords": "",
     "scripts": {
