@@ -1,11 +1,23 @@
 # better-api
 
 
+````html
+<button id="basic-pass" >pass</button>
+<button id="basic-fail" >fail</button>
+<button id="basic-fail-detailAction" >fail (defaultAction)</button>
+<hr />
+<button id="basic-net-fail" >net.fail</button>
+<button id="basic-net-fail-custom" >net.fail(custom)</button>
+<button id="basic-net-fail-defaultAction" >net.fail (defaultAction)</button>
+<hr />
+<button id="basic-abort" >abort</button>
+````
+
 ````code
 {
     title: '基础使用',
     desc: '',
-    html: '<button id="basic-pass" >pass</button> <button id="basic-fail" >fail</button>',
+    html: '',
     js: './basic.demo.js',
     source: './basic.demo.js',
     open: true
