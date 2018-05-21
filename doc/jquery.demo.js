@@ -9,9 +9,13 @@ var api = new BetterAPI({
         if (isLoading) {
             message.loadingBar.show(2)
         }
-        else if (failArg[2] !== 'abort') {
+        // failArg = [jqXHR, textStatus, errorThrown]
+        else if (failArg[1] !== 'abort') {
             message.loadingBar.fail()
         }
+        // else if (failArg[1] === 'abort') {
+        //     message.loadingBar.hide()
+        // }
         else {
             message.loadingBar.hide()
         }
@@ -31,8 +35,17 @@ var api = new BetterAPI({
     },
     defaultCallback: {
         net: {
-            fail: function () {
-                message.error('网络错误')
+            fail: function (jqXHR, textStatus) {
+                switch(textStatus) {
+                    case 'timeout':
+                        message.error('网络超时')
+                    break
+                    case 'abort':
+                    break
+                    default:
+                        message.error('网络错误')
+                }
+
             }
         }
     },
@@ -40,6 +53,9 @@ var api = new BetterAPI({
         return res.status
     },
     defaultResponseType: {
+        success: function () {
+            message.success('操作成功')
+        },
         fail: function (res) {
             message.error('fail:' + res.msg)
         },
@@ -73,7 +89,7 @@ var apiDelay = api.create({
     }
 })
 $(function () {
-    $('#basic-pass').on('click', function () {
+    $('#jquery-pass').on('click', function () {
         apiPass(
             // data
             {
@@ -90,7 +106,7 @@ $(function () {
             }
         )
     })
-    $('#basic-fail').on('click', function () {
+    $('#jquery-fail').on('click', function () {
         apiFail(
             // data
             {
@@ -107,7 +123,7 @@ $(function () {
             }
         )
     })
-    $('#basic-fail-detailAction').on('click', function () {
+    $('#jquery-fail-detailAction').on('click', function () {
         apiFail(
             // data
             {
@@ -125,10 +141,10 @@ $(function () {
             }
         )
     })
-    $('#basic-net-fail').on('click', function () {
+    $('#jquery-net-fail').on('click', function () {
         apiNetFail()
     })
-    $('#basic-net-fail-custom').on('click', function () {
+    $('#jquery-net-fail-custom').on('click', function () {
         apiNetFail({}, {}, {
             net: {
                 fail: function () {
@@ -137,7 +153,7 @@ $(function () {
             }
         })
     })
-    $('#basic-net-fail-defaultAction').on('click', function () {
+    $('#jquery-net-fail-defaultAction').on('click', function () {
         apiNetFail({}, {}, {
             net: {
                 fail: function () {
@@ -147,7 +163,7 @@ $(function () {
             }
         })
     })
-    $("#basic-abort").on('click', function () {
+    $("#jquery-abort").on('click', function () {
         var api = apiDelay({}, {}, {
             net: {
                 fail: function () {
@@ -157,5 +173,11 @@ $(function () {
         })
         api.abort()
     })
+    $('#jquery-loading').on('click', function () {
+        apiDelay({}, {}, {
+            loading: function (isLoading) {
+                console.log('isLoading', isLoading)
+            }
+        })
+    })
 })
-// http://echo.onface.live/onface/better-api/master/doc/mock/pass

@@ -18,6 +18,7 @@
     "$username": "onface",
     "$repository": "better-api",
     "dependencies": {
+        "axios": "^0.18.0",
         "extend": "^3.0.1"
     },
     "devDependencies": {
