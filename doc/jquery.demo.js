@@ -81,17 +81,18 @@ var api = new BetterAPI({
     loading: function loading(isLoading, failArg) {
         if (isLoading) {
             message.loadingBar.show(2);
-        }
-        // failArg = [jqXHR, textStatus, errorThrown]
-        else if (failArg[1] !== 'abort') {
-                message.loadingBar.fail();
-            }
-            // else if (failArg[1] === 'abort') {
-            //     message.loadingBar.hide()
-            // }
-            else {
+        } else {
+            switch (failArg[1]) {
+                case 'abort':
+
+                    break;
+                case undefined:
                     message.loadingBar.hide();
-                }
+                    break;
+                default:
+                    message.loadingBar.fail();
+            }
+        }
     },
     input: function input(req) {
         return req;
