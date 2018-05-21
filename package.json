@@ -1,7 +1,7 @@
 {
     "name": "better-api",
     "main": "lib/index.js",
-    "version": "0.2.4",
+    "version": "0.3.0",
     "description": "api encapsulation manage",
     "keywords": "",
     "scripts": {
@@ -11,7 +11,7 @@
         "build:2": "webpack --progress  --config ./compile/webpack.online.config.js && webpack --progress  --config ./compile/webpack.online.version.config.js",
         "npm": "rm -rf ./output && fis3 release npm -d ./output -r ./ -f compile/fis-conf.js",
         "doc": "npm run build:1 && npm run build:2",
-        "dp:gh": "node ./compile/deploy-gh",
+        "gh": "node ./compile/deploy-gh",
         "test": "./node_modules/karma/bin/karma start ./compile/karma.conf.js --browsers Chrome",
         "test:ci": "./node_modules/karma/bin/karma start ./compile/karma.ci.js"
     },
