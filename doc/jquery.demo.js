@@ -9,15 +9,17 @@ var api = new BetterAPI({
         if (isLoading) {
             message.loadingBar.show(2)
         }
-        // failArg = [jqXHR, textStatus, errorThrown]
-        else if (failArg[1] !== 'abort') {
-            message.loadingBar.fail()
-        }
-        // else if (failArg[1] === 'abort') {
-        //     message.loadingBar.hide()
-        // }
         else {
-            message.loadingBar.hide()
+            switch (failArg[1]) {
+                case 'abort':
+
+                    break;
+                case undefined:
+                    message.loadingBar.hide()
+                    break
+                default:
+                    message.loadingBar.fail()
+            }
         }
     },
     input: function (req) {
