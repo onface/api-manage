@@ -154,7 +154,7 @@ jQuery(function ($) {
 })
 
 jQuery(function ($) {
-    $.getJSON('https://registry.npm.taobao.org/' + PACKAGE_JSON.$repository, function (data) {
+    $.getJSON('https://registry.npm.taobao.org/' + PACKAGE_JSON.name, function (data) {
         var options = []
         Object.keys(data.versions).forEach(function (key) {
             var item = data.versions[key]
