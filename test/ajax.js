@@ -16,6 +16,11 @@ module.exports = function (settings, callback) {
                     status: '0'
                 })
             break
+            case '/login-success':
+                callback.done({
+                    status: 'success'
+                })
+            break
             default:
                 callback.done({
                     status: 'success'

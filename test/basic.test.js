@@ -2,7 +2,11 @@ import BetterAPI from "../lib/index"
 import { expect } from 'chai';
 import ajax from './ajax'
 
+var checkTempData = []
 var api = new BetterAPI({
+    check: function (...arg) {
+        checkTempData = arg
+    },
     defaultSettings: {
         dataType: 'json'
     },
@@ -10,34 +14,54 @@ var api = new BetterAPI({
         req.$testInputCommon = true
         return req
     },
-    output: function (res) {
+    output: function (res, req) {
         res.$testOutputCommon = true
         return res
     },
     fetch: function (data, settings, callback) {
         settings.data = data
-        ajax(settings, {
-            done:callback.$net.done,
-            fail: function () {
-                if (typeof callback.$net.fail === 'function') {
-                    callback.$net.fail.apply(null, arguments)
-                }
-                else {
-                    if (arguments[1] !== 'abort') {
-                        window.errorLog = window.errorLog || []
-                        window.errorLog.push('网络错误，请刷新重试')
-                    }
-                }
-            },
-            always: callback.$after
+        return ajax(settings, {
+            done: callback.net.done,
+            fail: callback.net.fail,
+            always: callback.after
         })
+    },
+    defaultCallback: {
+        net: {
+            fail: function (jqXHR, textStatus) {
+                switch(textStatus) {
+                    case 'timeout':
+
+                    break
+                    case 'abort':
+                    break
+                    default:
+
+                }
+
+            }
+        }
     },
     judgeResponseType: function (res) {
         return res.status
     },
     defaultResponseType: {
+        pass: function () {
+            message.success('操作成功')
+        },
+        fail: function (res) {
+            message.error('fail:' + res.msg)
+        },
         error: function (res) {
-            alert(res.msg)
+            message.error('error:' + res.msg)
+        }
+    },
+    defaultCallback: {
+        net: {
+            fail: function (jqXHR, textStatus) {
+                window.errorLog = window.errorLog || []
+                window.errorLog.push('网络错误，请刷新重试')
+            }
         }
     }
 })
@@ -67,17 +91,10 @@ describe('basic', () => {
                 passwrod: '1234'
             },
             {
-                // 请求发送前执行，适合修改 loading 状态
-                $before: function () {
-                    busy = true
-                },
-                $after: function () {
-                    busy = false
-                },
                 // responseType: success
                 success: function (res) {
-                    expect(JSON.stringify(ONFACE_BETTER_API_TEST_AJAX['/login']))
-                    .to.equal(JSON.stringify(
+                    expect(ONFACE_BETTER_API_TEST_AJAX['/login'])
+                    .to.eql(
                         {
                             "dataType":"json",
                             "url":"/login",
@@ -86,15 +103,15 @@ describe('basic', () => {
                                 "user":"nimo",
                                 "passwrod":"1234",
                                 "$testInputCommon":true,
-                                '$testInputLogin': true
+                                "$testInputLogin": true
                             },
                         }
-                    ))
-                    expect(JSON.stringify(res)).to.equal(JSON.stringify({
+                    )
+                    expect(res).to.eql({
                         status: 'success',
                         $testOutputCommon: true,
                         $testOutputLogin: true
-                    }))
+                    })
                     setTimeout(function () {
                         expect(busy).to.equal(false)
                         done()
@@ -106,17 +123,24 @@ describe('basic', () => {
 
                 },
                 */
-                $net: {
-                    done: function (res) {
-                        expect(JSON.stringify(res)).to.equal(JSON.stringify({
-                            status: 'success',
-                            $testOutputCommon: true,
-                            $testOutputLogin: true
-                        }))
-                    },
-                    fail: function () {
+            },
+            {
+                // 请求发送前执行，适合修改 loading 状态
+                before: function () {
+                    busy = true
+                },
+                after: function () {
+                    busy = false
+                },
+                done: function (res) {
+                    expect(JSON.stringify(res)).to.equal(JSON.stringify({
+                        status: 'success',
+                        $testOutputCommon: true,
+                        $testOutputLogin: true
+                    }))
+                },
+                fail: function () {
 
-                    }
                 }
             }
         )
@@ -135,7 +159,9 @@ describe('basic', () => {
                 success: function (res) {
                     expect('success不应该被调用').to.equal()
                 },
-                $net: {
+            },
+            {
+                net: {
                     done: function (res) {
                         expect('$net.done不应该被调用').to.equal()
                     },
@@ -159,16 +185,17 @@ describe('basic', () => {
                 passwrod: '1234'
             },
             {
-                $after: function () {
-                    expect(JSON.stringify(window.errorLog)).to.equal(JSON.stringify([ '网络错误，请刷新重试' ]))
-                    done()
-                },
                 success: function (res) {
                     expect('success不应该被调用').to.equal()
-                },
-                $net: {
+                }
+            },
+            {
+                net: {
                     done: function (res) {
                         expect('$net.done不应该被调用').to.equal()
+                    },
+                    fail: function () {
+                        done()
                     }
                 }
             }
@@ -215,5 +242,41 @@ describe('basic', () => {
                 }
             }
         )
+    })
+    it('check new BetterAPI', (done) => {
+        api.create({
+            settings: {
+                url: '/login-pass',
+                type: 'post'
+            },
+            input: function (req) {
+                req.inputDebug = 1
+                return req
+            },
+            output: function (res) {
+                res.ouputDebug = 1
+                return res
+            }
+        })({}, {
+            success: function (res) {
+                expect(checkTempData).to.eql(
+                    [
+                        {
+                            "status": "success"
+                        },
+                        {
+                            "$testInputCommon": true,
+                            "inputDebug": 1
+                        },
+                        {
+                            "url": "/login-pass",
+                            "type": "post"
+                        }
+                    ]
+                )
+            }
+        })
+
+
     })
 })
