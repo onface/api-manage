@@ -1,8 +1,28 @@
 var BetterAPI = require('better-api')
 var message  = require('face-message')
 var $ = require('jquery')
+// https://onface.github.io/types/
+var Types = require('face-types')({isRequired: true})
+var {
+    string, bool,number, array,
+    oneOf, arrayOf, object,
+    objectOf, shape
+} = Types
+var notRequiredTypes = require('face-types')({isRequired: false})
 
 var api = new BetterAPI({
+    check: function (res, req, settings) {
+        if (settings.url !== 'some_special_url') {
+            Types.check(
+                {
+                    status: oneOf(['pass', 'fail'])
+                },
+                res,
+                'ajax',
+                settings.url
+            )
+        }
+    },
     defaultSettings: {
         dataType: 'json'
     },
@@ -67,23 +87,23 @@ var api = new BetterAPI({
         }
     }
 })
-var PropTypes = require('prop-types')
 var apiAccount = api.create({
     settings: {
-        url: 'http://118.25.125.213:9823/onface/echo/mock/pass',
+        url: 'http://118.25.125.213:9823/onface/echo/mock/account',
         type: 'get'
     },
     check: {
-        pass: function (res, settings) {
+        pass: function (res, req, settings) {
             var { string, bool,number, array,
                   oneOf, arrayOf, object,
                   objectOf, shape
-                } = require('./face-prop-types')({isRequired: true})
-            var notRequired = require('./face-prop-types')({isRequired: false})
-            PropTypes.checkPropTypes(
+                } = require('face-types')({isRequired: true})
+            var notRequired = require('face-types')({isRequired: false})
+            Types.check(
                 {
                     data: shape({
-                        tip: notRequired.string,
+                        test1: string,
+                        test2: notRequiredTypes.string,
                         username: string,
                         age: number,
                         domains: arrayOf(string),
@@ -117,13 +137,8 @@ var apiFail = api.create({
         type: 'get'
     },
     check: {
-        fail: function (res, settings) {
-            var { string, bool,number, array,
-                  oneOf, arrayOf, object,
-                  objectOf, shape
-                } = require('./face-prop-types')({isRequired: true})
-            var notRequiredProp = require('./face-prop-types')({isRequired: false})
-            PropTypes.checkPropTypes(
+        fail: function (res, req, settings) {
+            Types.check(
                 {
                     msg: string
                 },
