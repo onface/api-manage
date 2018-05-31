@@ -1,3 +1,4 @@
+var path = require('path')
 module.exports = {
     less: {
         plugins: []
@@ -97,5 +98,12 @@ module.exports = {
                     version: '5.1'
                 }
         }
+    },
+    fis: function (fis) {
+
+    },
+    alias: {
+        'vue': 'vue/dist/vue.js',
+        [path.resolve('./lib/index.css')]: path.resolve('./lib/index.less')
     }
 }

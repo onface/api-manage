@@ -9,9 +9,7 @@ var karmaConf = function () {
         basePath: '../',
         frameworks: ['jasmine'],
         files: [
-            require.resolve('../doc/theme/polyfill/lt-ie10.js'),
-            require.resolve('../doc/theme/polyfill/lte-ie11.js'),
-            require.resolve('../doc/theme/polyfill/es6-promise.auto.js'),
+            'https://cdn.polyfill.io/v2/polyfill.min.js',
         ].concat(compileConfig.test.files),
         preprocessors: {
             // add webpack as preprocessor

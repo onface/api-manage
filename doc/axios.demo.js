@@ -84,7 +84,7 @@ var api = new BetterAPI({
         return res.status
     },
     defaultResponseType: {
-        success: function () {
+        pass: function () {
             message.success('操作成功')
         },
         fail: function (res) {
@@ -98,7 +98,7 @@ var api = new BetterAPI({
 
 var apiTimeout = api.create({
     settings: {
-        url: 'http://118.25.125.213:9823/onface/better-api/master/doc/mock/pass?$delay=1000',
+        url: 'http://118.25.125.213:9823/onface/echo/mock/pass?$delay=1000',
         type: 'get',
         timeout: 400
     }
@@ -123,7 +123,7 @@ $('#axios-404').on('click', function () {
 
 var apiAbort = api.create({
     settings: {
-        url: 'http://118.25.125.213:9823/onface/better-api/master/doc/mock/pass?$delay=1000',
+        url: 'http://118.25.125.213:9823/onface/echo/mock/pass?$delay=1000',
         type: 'get'
     }
 })

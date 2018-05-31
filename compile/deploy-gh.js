@@ -8,6 +8,8 @@ ghpages.publish(path.join(__dirname, '../output'), {
     },
     add: true
 }, function(err) {
+    console.log(err)
     if (err) {throw err}
+    console.log('push success')
 });
 console.log('git branch gh-pages pushing...')

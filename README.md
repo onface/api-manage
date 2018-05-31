@@ -49,8 +49,28 @@
         </tr>
     </table>
 </div>
+<div style="text-align:center;" >
+    <a href="https://travis-ci.org/onface/better-api" style="text-decoration: none;" >
+        <img alt="Build Status" src="https://api.travis-ci.org/onface/better-api.svg?branch=master" />
+    </a>
+    <a href="https://npmjs.org/package/better-api"  style="text-decoration: none;" >
+        <img alt="NPM version" src="https://img.shields.io/npm/v/better-api.svg?style=flat" />
+    </a>
+    <a href="https://npmjs.org/package/better-api"  style="text-decoration: none;" >
+        <img alt="NPM downloads" src="https://img.shields.io/npm/dm/better-api.svg?style=flat" />
+    </a>
+</div>
 
-<h2 style="text-align:center;">Creator</h2>
+
+<a href="https://saucelabs.com/u/onface-better-api" >
+    <img alt="Saucelabs Tests" style="display:block;margin-left:auto;margin-right:auto;" src="https://saucelabs.com/browser-matrix/onface-better-api.svg" >
+</a>
+
+
+
+<h2 class="face-one-feature-title">
+    Creator
+</h2>
 <div class="face-one-feature">
     <table style="width:100%;" data-comments="In order to github typesetting so use the table tag" >
         <tr>

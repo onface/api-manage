@@ -55,7 +55,7 @@ var api = new BetterAPI({
         return res.status
     },
     defaultResponseType: {
-        success: function () {
+        pass: function () {
             message.success('操作成功')
         },
         fail: function (res) {
@@ -68,13 +68,13 @@ var api = new BetterAPI({
 })
 var apiPass = api.create({
     settings: {
-        url: 'http://118.25.125.213:9823/onface/better-api/master/doc/mock/pass',
+        url: 'http://118.25.125.213:9823/onface/echo/mock/pass',
         type: 'get'
     }
 })
 var apiFail = api.create({
     settings: {
-        url: 'http://118.25.125.213:9823/onface/better-api/master/doc/mock/fail',
+        url: 'http://118.25.125.213:9823/onface/echo/mock/fail',
         type: 'get'
     }
 })
@@ -86,7 +86,7 @@ var apiNetFail = api.create({
 })
 var apiDelay = api.create({
     settings: {
-        url: 'http://118.25.125.213:9823/onface/better-api/master/doc/mock/pass?$delay=1000',
+        url: 'http://118.25.125.213:9823/onface/echo/mock/pass?$delay=1000',
         type: 'get'
     }
 })

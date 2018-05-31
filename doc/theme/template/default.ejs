@@ -8,6 +8,8 @@
     <meta name="keywords" content="<%= PACKAGE.keywords; %>">
     <meta name="description" content="<%- description?description:title %>">
     <title><%- title %></title>
+    <!--[if lt IE 10]><script src="/doc/theme/polyfill/lt-ie10.js"></script><![endif]-->
+    <script src="/doc/theme/polyfill/es6-promise.js"></script>
 </head>
 <body>
 <link rel="import" href="/doc/theme/head.html?__inline">
@@ -15,7 +17,7 @@
     <div class="face-one-layout-F-line">
         <div class="face-one-layout-sidebar">
             <div class="face-one-nav">
-                <span class="face-one-nav-switch fi fi-angle-double-right"></span>
+                <span class="face-one-nav-switch fi fi-menu-unfold"></span>
                 <div class="face-one-nav-F-inner">
                     <link rel="import" href="/doc/<%- navPath %>?__inline">
                 </div>

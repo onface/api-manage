@@ -16,6 +16,9 @@ webpackConfig.plugins = [
         'process.env': {
             NODE_ENV: JSON.stringify('production')
         }
+    }),
+    new UglifyJsPlugin({
+        cache: path.join('../node_modules/_uglifyjs_cache')
     })
 ]
 webpackConfig.output.publicPath = '/' + iPackage.$repository + '/' + iPackage.version
