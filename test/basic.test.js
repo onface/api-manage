@@ -274,6 +274,7 @@ describe('basic', () => {
                         }
                     ]
                 )
+                done()
             }
         })
 
