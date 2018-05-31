@@ -1,7 +1,7 @@
 {
     "name": "better-api",
     "main": "lib/index.js",
-    "version": "0.3.0",
+    "version": "0.3.1",
     "description": "前后端交互接口封装管理(AJAX HTTP)",
     "keywords": "",
     "scripts": {
