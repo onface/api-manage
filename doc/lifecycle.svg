@@ -36,21 +36,21 @@
             <tspan x="555.3" y="1059" fill="#FFFFFF">)</tspan>
         </text>
         <path d="M503.5,360.5 L321.5,360.5" id="Line-2" stroke="#F5A623" stroke-linecap="square" stroke-dasharray="5,5" transform="translate(412.500000, 360.500000) scale(-1, 1) translate(-412.500000, -360.500000) "></path>
-        <rect id="Rectangle" stroke="#F5A623" x="10.5" y="870.5" width="288" height="83" rx="8"></rect>
+        <rect id="Rectangle" stroke="#F5A623" fill="#FFFFFF" x="10.5" y="870.5" width="288" height="83" rx="8"></rect>
         <text id="inputed-=-options.in" font-family="Ayuthaya" font-size="14" font-weight="normal">
             <tspan x="39" y="901" fill="#F5A623">inputed = options.input(</tspan>
             <tspan x="39" y="920" fill="#FFFFFF">    </tspan>
             <tspan x="72.2533333" y="920" fill="#F5A623">lifecycle.input(request)</tspan>
             <tspan x="39" y="939" fill="#F5A623">)</tspan>
         </text>
-        <rect id="Rectangle" stroke="#98C379" x="762.5" y="1065.5" width="351" height="86" rx="8"></rect>
+        <rect id="Rectangle" stroke="#98C379" fill="#FFFFFF" x="762.5" y="1065.5" width="351" height="86" rx="8"></rect>
         <text id="lifecycle.loading(tr" font-family="Ayuthaya" font-size="16" font-weight="normal" fill="#98C379">
             <tspan x="774" y="1095">lifecycle.loading(true, [], info)</tspan>
             <tspan x="774" y="1117">options.loading(true, [], info)</tspan>
             <tspan x="774" y="1139">callback.loading(true, [], info)</tspan>
         </text>
         <path d="M503.5,913.5 L321.5,913.5" id="Line-2" stroke="#F5A623" stroke-linecap="square" stroke-dasharray="5,5" transform="translate(412.500000, 913.500000) scale(-1, 1) translate(-412.500000, -913.500000) "></path>
-        <rect id="Rectangle" stroke="#F5A623" x="39" y="308" width="272" height="103" rx="8"></rect>
+        <rect id="Rectangle" stroke="#F5A623" fill="#FFFFFF" x="39" y="308" width="272" height="103" rx="8"></rect>
         <text id="extend(-lifecycle.de" font-family="Ayuthaya" font-size="14" font-weight="normal">
             <tspan x="54" y="336" fill="#F5A623">extend(</tspan>
             <tspan x="54" y="355" fill="#FFFFFF">	</tspan>
@@ -60,7 +60,7 @@
             <tspan x="54" y="393" fill="#F5A623">)</tspan>
         </text>
         <path d="M503.5,503.5 L321.5,503.5" id="Line-2" stroke="#F5A623" stroke-linecap="square" stroke-dasharray="5,5" transform="translate(412.500000, 503.500000) scale(-1, 1) translate(-412.500000, -503.500000) "></path>
-        <rect id="Rectangle" stroke="#F5A623" x="39" y="451" width="272" height="96" rx="8"></rect>
+        <rect id="Rectangle" stroke="#F5A623" fill="#FFFFFF" x="39" y="451" width="272" height="96" rx="8"></rect>
         <text id="extend(-lifecycle.de" font-family="Ayuthaya" font-size="14" font-weight="normal">
             <tspan x="54" y="479" fill="#F5A623">extend(</tspan>
             <tspan x="54" y="498" fill="#FFFFFF">    </tspan>
@@ -70,7 +70,7 @@
             <tspan x="54" y="536" fill="#F5A623">)</tspan>
         </text>
         <path d="M503.5,648.5 L345.5,648.5" id="Line-2" stroke="#F5A623" stroke-linecap="square" stroke-dasharray="5,5" transform="translate(424.500000, 648.500000) scale(-1, 1) translate(-424.500000, -648.500000) "></path>
-        <rect id="Rectangle" stroke="#F5A623" x="37" y="594" width="289" height="103" rx="8"></rect>
+        <rect id="Rectangle" stroke="#F5A623" fill="#FFFFFF" x="37" y="594" width="289" height="103" rx="8"></rect>
         <text id="extend(-lifecycle.de" font-family="Ayuthaya" font-size="14" font-weight="normal">
             <tspan x="45" y="622" fill="#F5A623">extend(</tspan>
             <tspan x="45" y="641" fill="#FFFFFF">    </tspan>
@@ -86,7 +86,7 @@
             <tspan x="418" y="795">conversion optoins</tspan>
         </text>
         <path d="M725.5,1108.5 L557.5,1108.5" id="Line-2" stroke="#98C379" stroke-linecap="square" stroke-dasharray="5,5" transform="translate(641.500000, 1108.500000) scale(-1, 1) translate(-641.500000, -1108.500000) "></path>
-        <rect id="Rectangle" stroke="#98C379" x="762.5" y="1244.5" width="399" height="52" rx="8"></rect>
+        <rect id="Rectangle" stroke="#98C379" fill="#FFFFFF" x="762.5" y="1244.5" width="399" height="52" rx="8"></rect>
         <text id="lifecycle.fetch(inpu" font-family="Ayuthaya" font-size="14" font-weight="normal" fill="#98C379">
             <tspan x="775" y="1275">lifecycle.fetch(inputed, settings, callback)</tspan>
         </text>
@@ -130,7 +130,7 @@
             <tspan x="472" y="1832" fill="#F8E71C">outputed</tspan>
             <tspan x="568" y="1832" fill="#FFFFFF">)</tspan>
         </text>
-        <rect id="Rectangle" stroke="#98C379" x="762.5" y="1855.5" width="246" height="209" rx="8"></rect>
+        <rect id="Rectangle" stroke="#98C379" fill="#FFFFFF" x="762.5" y="1855.5" width="246" height="209" rx="8"></rect>
         <text id="lifecycle.check({-re" font-family="Ayuthaya" font-size="14" font-weight="normal">
             <tspan x="785" y="1883" fill="#98C379">lifecycle.check({</tspan>
             <tspan x="785" y="1902" fill="#FFFFFF">    </tspan>
@@ -150,7 +150,7 @@
             <tspan x="785" y="2054" fill="#98C379">})</tspan>
         </text>
         <path d="M724.5,1959.5 L559.5,1959.5" id="Line-2" stroke="#98C379" stroke-linecap="square" stroke-dasharray="5,5" transform="translate(642.000000, 1959.500000) scale(-1, 1) translate(-642.000000, -1959.500000) "></path>
-        <rect id="Rectangle" stroke="#F5A623" x="8.5" y="1667.5" width="288" height="79" rx="8"></rect>
+        <rect id="Rectangle" stroke="#F5A623" fill="#FFFFFF" x="8.5" y="1667.5" width="288" height="79" rx="8"></rect>
         <text id="outputed-=-options.o" font-family="Ayuthaya" font-size="14" font-weight="normal">
             <tspan x="29" y="1694" fill="#F5A623">outputed = options.output(</tspan>
             <tspan x="29" y="1713" fill="#FFFFFF">    </tspan>
@@ -158,7 +158,7 @@
             <tspan x="29" y="1732" fill="#F5A623">)</tspan>
         </text>
         <path d="M477.5,1705.5 L316.5,1705.5" id="Line-2" stroke="#F5A623" stroke-linecap="square" stroke-dasharray="5,5" transform="translate(397.000000, 1705.500000) scale(-1, 1) translate(-397.000000, -1705.500000) "></path>
-        <rect id="Rectangle" stroke="#F5A623" x="0.5" y="1567.5" width="305" height="52" rx="8"></rect>
+        <rect id="Rectangle" stroke="#F5A623" fill="#FFFFFF" x="0.5" y="1567.5" width="305" height="52" rx="8"></rect>
         <path d="M520.5,1572.5 L520.5,1760.5" id="Line" stroke="#D6D6D6" stroke-width="3" stroke-linecap="square"></path>
         <path id="Line-decoration-1" d="M520.5,1760.5 L523.5,1749.7 L517.5,1749.7 L520.5,1760.5 Z" stroke="#D6D6D6" stroke-width="3" stroke-linecap="square"></path>
         <path d="M522.5,1868.5 L522.5,2056.5" id="Line" stroke="#D6D6D6" stroke-width="3" stroke-linecap="square"></path>
@@ -169,14 +169,14 @@
         <text id="check-types" font-family="Ayuthaya" font-size="24" font-weight="normal" fill="#FFFFFF">
             <tspan x="447" y="2109">check types</tspan>
         </text>
-        <rect id="Rectangle" stroke="#98C379" x="780.5" y="2159.5" width="389" height="67" rx="8"></rect>
+        <rect id="Rectangle" stroke="#98C379" fill="#FFFFFF" x="780.5" y="2159.5" width="389" height="67" rx="8"></rect>
         <text id="key-=-lifecycle.judg" font-family="Ayuthaya" font-size="14" font-weight="normal" fill="#98C379">
             <tspan x="796" y="2188">key = lifecycle.judgeResponseType(outputed)</tspan>
             <tspan x="796" y="2207">responseType[key](outputed, info)</tspan>
         </text>
         <path d="M741.5,2194.5 L576.5,2194.5" id="Line-2" stroke="#98C379" stroke-linecap="square" stroke-dasharray="5,5" transform="translate(659.000000, 2194.500000) scale(-1, 1) translate(-659.000000, -2194.500000) "></path>
         <path d="M741.5,2194.5 L576.5,2194.5" id="Line-2" stroke="#98C379" stroke-linecap="square" stroke-dasharray="5,5" transform="translate(659.000000, 2194.500000) scale(-1, 1) translate(-659.000000, -2194.500000) "></path>
-        <rect id="Rectangle" stroke="#98C379" x="779.5" y="2240.5" width="201" height="76" rx="8"></rect>
+        <rect id="Rectangle" stroke="#98C379" fill="#FFFFFF" x="779.5" y="2240.5" width="201" height="76" rx="8"></rect>
         <text id="callback.net.done()" font-family="Ayuthaya" font-size="14" font-weight="normal" fill="#98C379">
             <tspan x="801" y="2265">callback.net.done()</tspan>
             <tspan x="801" y="2284">callback.net.fail()</tspan>
