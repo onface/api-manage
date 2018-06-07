@@ -1,0 +1,204 @@
+
+<svg width="1170px" height="2431px" viewBox="0 0 1170 2431" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="50%" y1="7.43963255%" x2="50%" y2="107.177165%" id="linearGradient-1">
+            <stop stop-color="#2A91F1" offset="0%"></stop>
+            <stop stop-color="#2C8AEE" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="50%" y1="1.20667044%" x2="50%" y2="98.805766%" id="linearGradient-2">
+            <stop stop-color="#249DF5" offset="0%"></stop>
+            <stop stop-color="#317CE9" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <rect id="BetterBG" fill="#98C379" x="335" y="89" width="357" height="80" rx="8"></rect>
+        <rect id="Rectangle" fill="#F5A623" x="331" y="230" width="373" height="68" rx="8"></rect>
+        <text id="var-login-=-api.crea" font-family="Ayuthaya" font-size="14" font-weight="normal" fill="#FFFFFF">
+            <tspan x="359" y="259">var login = api.create(options);</tspan>
+            <tspan x="359" y="278">login(request, responseType, callback)</tspan>
+        </text>
+        <text id="api-=-new-BetterAPI(" font-family="Ayuthaya" font-size="18" font-weight="normal" fill="#FFFFFF">
+            <tspan x="357" y="133">api = new BetterAPI(lifecycle)</tspan>
+        </text>
+        <path d="M512.5,172.5 L512.5,219.5" id="Line" stroke="#D6D6D6" stroke-width="3" fill="#D8D8D8" stroke-linecap="square"></path>
+        <path id="Line-decoration-1" d="M512.5,219.5 L515.5,208.7 L509.5,208.7 L512.5,219.5 Z" stroke="#D6D6D6" stroke-width="3" fill="#D8D8D8" stroke-linecap="square"></path>
+        <path d="M517.5,842.5 L517.5,995.5" id="Line" stroke="#D6D6D6" stroke-width="3" stroke-linecap="square"></path>
+        <path id="Line-decoration-1" d="M517.5,995.5 L520.5,984.7 L514.5,984.7 L517.5,995.5 Z" stroke="#D6D6D6" stroke-width="3" stroke-linecap="square"></path>
+        <path d="" id="Path-2" stroke="#979797"></path>
+        <path d="" id="Path-3" stroke="#979797"></path>
+        <rect id="Rectangle-2" fill="#4A90E2" x="382" y="1005" width="266" height="74" rx="8"></rect>
+        <text id="conversion-request-(" font-family="Ayuthaya" font-size="18" font-weight="normal">
+            <tspan x="420.355714" y="1034" fill="#FFFFFF">conversion request</tspan>
+            <tspan x="468.9" y="1059" fill="#FFFFFF">(</tspan>
+            <tspan x="479.7" y="1059" fill="#F8E71C">inputed</tspan>
+            <tspan x="555.3" y="1059" fill="#FFFFFF">)</tspan>
+        </text>
+        <path d="M503.5,360.5 L321.5,360.5" id="Line-2" stroke="#F5A623" stroke-linecap="square" stroke-dasharray="5,5" transform="translate(412.500000, 360.500000) scale(-1, 1) translate(-412.500000, -360.500000) "></path>
+        <rect id="Rectangle" stroke="#F5A623" x="10.5" y="870.5" width="288" height="83" rx="8"></rect>
+        <text id="inputed-=-options.in" font-family="Ayuthaya" font-size="14" font-weight="normal">
+            <tspan x="39" y="901" fill="#F5A623">inputed = options.input(</tspan>
+            <tspan x="39" y="920" fill="#FFFFFF">    </tspan>
+            <tspan x="72.2533333" y="920" fill="#F5A623">lifecycle.input(request)</tspan>
+            <tspan x="39" y="939" fill="#F5A623">)</tspan>
+        </text>
+        <rect id="Rectangle" stroke="#98C379" x="762.5" y="1065.5" width="351" height="86" rx="8"></rect>
+        <text id="lifecycle.loading(tr" font-family="Ayuthaya" font-size="16" font-weight="normal" fill="#98C379">
+            <tspan x="774" y="1095">lifecycle.loading(true, [], info)</tspan>
+            <tspan x="774" y="1117">options.loading(true, [], info)</tspan>
+            <tspan x="774" y="1139">callback.loading(true, [], info)</tspan>
+        </text>
+        <path d="M503.5,913.5 L321.5,913.5" id="Line-2" stroke="#F5A623" stroke-linecap="square" stroke-dasharray="5,5" transform="translate(412.500000, 913.500000) scale(-1, 1) translate(-412.500000, -913.500000) "></path>
+        <rect id="Rectangle" stroke="#F5A623" x="39" y="308" width="272" height="103" rx="8"></rect>
+        <text id="extend(-lifecycle.de" font-family="Ayuthaya" font-size="14" font-weight="normal">
+            <tspan x="54" y="336" fill="#F5A623">extend(</tspan>
+            <tspan x="54" y="355" fill="#FFFFFF">	</tspan>
+            <tspan x="82" y="355" fill="#F5A623">lifecycle.defaultSettings,</tspan>
+            <tspan x="54" y="374" fill="#FFFFFF">	</tspan>
+            <tspan x="82" y="374" fill="#F5A623">options.settings</tspan>
+            <tspan x="54" y="393" fill="#F5A623">)</tspan>
+        </text>
+        <path d="M503.5,503.5 L321.5,503.5" id="Line-2" stroke="#F5A623" stroke-linecap="square" stroke-dasharray="5,5" transform="translate(412.500000, 503.500000) scale(-1, 1) translate(-412.500000, -503.500000) "></path>
+        <rect id="Rectangle" stroke="#F5A623" x="39" y="451" width="272" height="96" rx="8"></rect>
+        <text id="extend(-lifecycle.de" font-family="Ayuthaya" font-size="14" font-weight="normal">
+            <tspan x="54" y="479" fill="#F5A623">extend(</tspan>
+            <tspan x="54" y="498" fill="#FFFFFF">    </tspan>
+            <tspan x="87.2533333" y="498" fill="#F5A623">lifecycle.defaultCallback,</tspan>
+            <tspan x="54" y="517" fill="#FFFFFF">    </tspan>
+            <tspan x="87.2533333" y="517" fill="#F5A623">callback</tspan>
+            <tspan x="54" y="536" fill="#F5A623">)</tspan>
+        </text>
+        <path d="M503.5,648.5 L345.5,648.5" id="Line-2" stroke="#F5A623" stroke-linecap="square" stroke-dasharray="5,5" transform="translate(424.500000, 648.500000) scale(-1, 1) translate(-424.500000, -648.500000) "></path>
+        <rect id="Rectangle" stroke="#F5A623" x="37" y="594" width="289" height="103" rx="8"></rect>
+        <text id="extend(-lifecycle.de" font-family="Ayuthaya" font-size="14" font-weight="normal">
+            <tspan x="45" y="622" fill="#F5A623">extend(</tspan>
+            <tspan x="45" y="641" fill="#FFFFFF">    </tspan>
+            <tspan x="78.2533333" y="641" fill="#F5A623">lifecycle.defaultResponseType,</tspan>
+            <tspan x="45" y="660" fill="#FFFFFF">    </tspan>
+            <tspan x="78.2533333" y="660" fill="#F5A623">responseType</tspan>
+            <tspan x="45" y="679" fill="#F5A623">)</tspan>
+        </text>
+        <path d="M514.5,309.498792 L514.5,736.5" id="Line" stroke="#D6D6D6" stroke-width="3" stroke-linecap="square"></path>
+        <path id="Line-decoration-1" d="M514.5,736.5 L517.5,725.7 L511.5,725.7 L514.5,736.5 Z" stroke="#D6D6D6" stroke-width="3" stroke-linecap="square"></path>
+        <rect id="Rectangle-2" fill="#4A90E2" x="379" y="752" width="266" height="74" rx="8"></rect>
+        <text id="conversion-optoins" font-family="Ayuthaya" font-size="18" font-weight="normal" fill="#FFFFFF">
+            <tspan x="418" y="795">conversion optoins</tspan>
+        </text>
+        <path d="M725.5,1108.5 L557.5,1108.5" id="Line-2" stroke="#98C379" stroke-linecap="square" stroke-dasharray="5,5" transform="translate(641.500000, 1108.500000) scale(-1, 1) translate(-641.500000, -1108.500000) "></path>
+        <rect id="Rectangle" stroke="#98C379" x="762.5" y="1244.5" width="399" height="52" rx="8"></rect>
+        <text id="lifecycle.fetch(inpu" font-family="Ayuthaya" font-size="14" font-weight="normal" fill="#98C379">
+            <tspan x="775" y="1275">lifecycle.fetch(inputed, settings, callback)</tspan>
+        </text>
+        <path d="M729.5,1277.5 L561.5,1277.5" id="Line-2" stroke="#98C379" stroke-linecap="square" stroke-dasharray="5,5" transform="translate(645.500000, 1277.500000) scale(-1, 1) translate(-645.500000, -1277.500000) "></path>
+        <path d="M517.5,1088.5 L517.5,1152.5" id="Line" stroke="#D6D6D6" stroke-width="3" stroke-linecap="square"></path>
+        <path id="Line-decoration-1" d="M517.5,1152.5 L520.5,1141.7 L514.5,1141.7 L517.5,1152.5 Z" stroke="#D6D6D6" stroke-width="3" stroke-linecap="square"></path>
+        <rect id="Rectangle-2" fill="#4A90E2" x="379" y="1160" width="266" height="74" rx="8"></rect>
+        <text id="trigger-loading" font-family="Ayuthaya" font-size="18" font-weight="normal" fill="#FFFFFF">
+            <tspan x="433" y="1201">trigger loading</tspan>
+        </text>
+        <rect id="Rectangle" stroke="#98C379" x="762.5" y="1409.5" width="399" height="95" rx="8"></rect>
+        <text id="lifecycle.loading(fa" font-family="Ayuthaya" font-size="16" font-weight="normal" fill="#98C379">
+            <tspan x="773" y="1442">lifecycle.loading(false, failArg, info)</tspan>
+            <tspan x="773" y="1464">options.loading(false, failArg, info)</tspan>
+            <tspan x="773" y="1486">callback.loading(false, failArg, info)</tspan>
+        </text>
+        <path d="M732.5,1445.5 L564.5,1445.5" id="Line-2" stroke="#98C379" stroke-linecap="square" stroke-dasharray="5,5" transform="translate(648.500000, 1445.500000) scale(-1, 1) translate(-648.500000, -1445.500000) "></path>
+        <path d="M517.5,1411.5 L517.5,1475.5" id="Line" stroke="#D6D6D6" stroke-width="3" stroke-linecap="square"></path>
+        <path id="Line-decoration-1" d="M517.5,1475.5 L520.5,1464.7 L514.5,1464.7 L517.5,1475.5 Z" stroke="#D6D6D6" stroke-width="3" stroke-linecap="square"></path>
+        <rect id="Rectangle-2" fill="#4A90E2" x="379" y="1483" width="266" height="74" rx="8"></rect>
+        <text id="trigger-loading" font-family="Ayuthaya" font-size="18" font-weight="normal" fill="#FFFFFF">
+            <tspan x="435" y="1524">trigger loading</tspan>
+        </text>
+        <path d="M520.5,1244.5 L520.5,1317.5" id="Line" stroke="#D6D6D6" stroke-width="3" stroke-linecap="square"></path>
+        <path id="Line-decoration-1" d="M520.5,1317.5 L523.5,1306.7 L517.5,1306.7 L520.5,1317.5 Z" stroke="#D6D6D6" stroke-width="3" stroke-linecap="square"></path>
+        <rect id="Rectangle-2" fill="#4A90E2" x="354" y="1325" width="323" height="74" rx="8"></rect>
+        <text id="fetch-response" font-family="Ayuthaya" font-size="24" font-weight="normal" fill="#FFFFFF">
+            <tspan x="417" y="1368">fetch response</tspan>
+        </text>
+        <rect id="Rectangle" stroke="#F5A623" x="0.5" y="1567.5" width="305" height="52" rx="8"></rect>
+        <text id="lifecycle.filter(res" font-family="Ayuthaya" font-size="14" font-weight="normal" fill="#F5A623">
+            <tspan x="22" y="1599">lifecycle.filter(response, info)</tspan>
+        </text>
+        <path d="M489.5,1594.5 L321.5,1594.5" id="Line-2" stroke="#F5A623" stroke-linecap="square" stroke-dasharray="5,5" transform="translate(405.500000, 1594.500000) scale(-1, 1) translate(-405.500000, -1594.500000) "></path>
+        <path d="M520.5,1572.5 L520.5,1760.5" id="Line" stroke="#D6D6D6" stroke-width="3" stroke-linecap="square"></path>
+        <path id="Line-decoration-1" d="M520.5,1760.5 L523.5,1749.7 L517.5,1749.7 L520.5,1760.5 Z" stroke="#D6D6D6" stroke-width="3" stroke-linecap="square"></path>
+        <rect id="Rectangle-2" fill="#4A90E2" x="359" y="1774" width="323" height="74" rx="8"></rect>
+        <text id="conversion-response" font-family="Ayuthaya" font-size="20" font-weight="normal">
+            <tspan x="406.061905" y="1805" fill="#FFFFFF">conversion response</tspan>
+            <tspan x="460" y="1832" fill="#FFFFFF">(</tspan>
+            <tspan x="472" y="1832" fill="#F8E71C">outputed</tspan>
+            <tspan x="568" y="1832" fill="#FFFFFF">)</tspan>
+        </text>
+        <rect id="Rectangle" stroke="#98C379" x="762.5" y="1855.5" width="246" height="209" rx="8"></rect>
+        <text id="lifecycle.check({-re" font-family="Ayuthaya" font-size="14" font-weight="normal">
+            <tspan x="785" y="1883" fill="#98C379">lifecycle.check({</tspan>
+            <tspan x="785" y="1902" fill="#FFFFFF">    </tspan>
+            <tspan x="818.253333" y="1902" fill="#98C379">request, inputted,</tspan>
+            <tspan x="785" y="1921" fill="#FFFFFF">    </tspan>
+            <tspan x="818.253333" y="1921" fill="#98C379">response, outputted,</tspan>
+            <tspan x="785" y="1940" fill="#FFFFFF">    </tspan>
+            <tspan x="818.253333" y="1940" fill="#98C379">settings</tspan>
+            <tspan x="785" y="1959" fill="#98C379">})</tspan>
+            <tspan x="785" y="1978" fill="#98C379">options.check({</tspan>
+            <tspan x="785" y="1997" fill="#FFFFFF">    </tspan>
+            <tspan x="818.253333" y="1997" fill="#98C379">request, inputted,</tspan>
+            <tspan x="785" y="2016" fill="#FFFFFF">    </tspan>
+            <tspan x="818.253333" y="2016" fill="#98C379">response, outputted,</tspan>
+            <tspan x="785" y="2035" fill="#FFFFFF">    </tspan>
+            <tspan x="818.253333" y="2035" fill="#98C379">settings</tspan>
+            <tspan x="785" y="2054" fill="#98C379">})</tspan>
+        </text>
+        <path d="M724.5,1959.5 L559.5,1959.5" id="Line-2" stroke="#98C379" stroke-linecap="square" stroke-dasharray="5,5" transform="translate(642.000000, 1959.500000) scale(-1, 1) translate(-642.000000, -1959.500000) "></path>
+        <rect id="Rectangle" stroke="#F5A623" x="8.5" y="1667.5" width="288" height="79" rx="8"></rect>
+        <text id="outputed-=-options.o" font-family="Ayuthaya" font-size="14" font-weight="normal">
+            <tspan x="29" y="1694" fill="#F5A623">outputed = options.output(</tspan>
+            <tspan x="29" y="1713" fill="#FFFFFF">    </tspan>
+            <tspan x="62.2533333" y="1713" fill="#F5A623">lifecycle.output(response)</tspan>
+            <tspan x="29" y="1732" fill="#F5A623">)</tspan>
+        </text>
+        <path d="M477.5,1705.5 L316.5,1705.5" id="Line-2" stroke="#F5A623" stroke-linecap="square" stroke-dasharray="5,5" transform="translate(397.000000, 1705.500000) scale(-1, 1) translate(-397.000000, -1705.500000) "></path>
+        <rect id="Rectangle" stroke="#F5A623" x="0.5" y="1567.5" width="305" height="52" rx="8"></rect>
+        <path d="M520.5,1572.5 L520.5,1760.5" id="Line" stroke="#D6D6D6" stroke-width="3" stroke-linecap="square"></path>
+        <path id="Line-decoration-1" d="M520.5,1760.5 L523.5,1749.7 L517.5,1749.7 L520.5,1760.5 Z" stroke="#D6D6D6" stroke-width="3" stroke-linecap="square"></path>
+        <path d="M522.5,1868.5 L522.5,2056.5" id="Line" stroke="#D6D6D6" stroke-width="3" stroke-linecap="square"></path>
+        <path id="Line-decoration-1" d="M522.5,2056.5 L525.5,2045.7 L519.5,2045.7 L522.5,2056.5 Z" stroke="#D6D6D6" stroke-width="3" stroke-linecap="square"></path>
+        <path d="M524.5,2156.5 L524.5,2344.5" id="Line" stroke="#D6D6D6" stroke-width="3" stroke-linecap="square"></path>
+        <path id="Line-decoration-1" d="M524.5,2344.5 L527.5,2333.7 L521.5,2333.7 L524.5,2344.5 Z" stroke="#D6D6D6" stroke-width="3" stroke-linecap="square"></path>
+        <rect id="Rectangle-2" fill="#4A90E2" x="363" y="2066" width="323" height="74" rx="8"></rect>
+        <text id="check-types" font-family="Ayuthaya" font-size="24" font-weight="normal" fill="#FFFFFF">
+            <tspan x="447" y="2109">check types</tspan>
+        </text>
+        <rect id="Rectangle" stroke="#98C379" x="780.5" y="2159.5" width="389" height="67" rx="8"></rect>
+        <text id="key-=-lifecycle.judg" font-family="Ayuthaya" font-size="14" font-weight="normal" fill="#98C379">
+            <tspan x="796" y="2188">key = lifecycle.judgeResponseType(outputed)</tspan>
+            <tspan x="796" y="2207">responseType[key](outputed, info)</tspan>
+        </text>
+        <path d="M741.5,2194.5 L576.5,2194.5" id="Line-2" stroke="#98C379" stroke-linecap="square" stroke-dasharray="5,5" transform="translate(659.000000, 2194.500000) scale(-1, 1) translate(-659.000000, -2194.500000) "></path>
+        <path d="M741.5,2194.5 L576.5,2194.5" id="Line-2" stroke="#98C379" stroke-linecap="square" stroke-dasharray="5,5" transform="translate(659.000000, 2194.500000) scale(-1, 1) translate(-659.000000, -2194.500000) "></path>
+        <rect id="Rectangle" stroke="#98C379" x="779.5" y="2240.5" width="201" height="76" rx="8"></rect>
+        <text id="callback.net.done()" font-family="Ayuthaya" font-size="14" font-weight="normal" fill="#98C379">
+            <tspan x="801" y="2265">callback.net.done()</tspan>
+            <tspan x="801" y="2284">callback.net.fail()</tspan>
+            <tspan x="801" y="2303">callback.after()</tspan>
+        </text>
+        <path d="M741.5,2279.5 L576.5,2279.5" id="Line-2" stroke="#98C379" stroke-linecap="square" stroke-dasharray="5,5" transform="translate(659.000000, 2279.500000) scale(-1, 1) translate(-659.000000, -2279.500000) "></path>
+        <rect id="Rectangle-2" fill="#4A90E2" x="376" y="2357" width="323" height="74" rx="8"></rect>
+        <text id="callback" font-family="Ayuthaya" font-size="24" font-weight="normal" fill="#FFFFFF">
+            <tspan x="476" y="2400">callback</tspan>
+        </text>
+        <text id="onface/better-api" font-family="Ayuthaya" font-size="36" font-weight="normal" fill="#4A4A4A">
+            <tspan x="336" y="54">onface/better-api</tspan>
+        </text>
+        <g id="logo" transform="translate(287.000000, 21.000000)" fill-rule="nonzero">
+            <g id="图层_2" transform="translate(8.000000, 5.000000)" fill="#FFFFFF">
+                <rect id="Rectangle-path" x="0.0478632479" y="0.0235714286" width="27.9521368" height="32.7642857"></rect>
+            </g>
+            <g id="onface">
+                <path d="M18.6876404,20.4573034 C18.6876404,23.1707865 19.9382022,25.152809 20.7168539,25.152809 C21.4955056,25.152809 22.7224719,23.1707865 22.7224719,20.4573034 C22.7224719,17.8617978 21.6842697,16.1629213 20.7168539,16.1629213 C19.7258427,16.1865169 18.6876404,17.8617978 18.6876404,20.4573034 Z" id="Shape" fill="url(#linearGradient-1)"></path>
+                <path d="M33.2932584,0.0471910112 L8.68314607,0.0471910112 C3.96404494,0.0471910112 0.117977528,3.86966292 0.117977528,8.61235955 L0.117977528,33.2224719 C0.117977528,37.941573 3.94044944,41.7876404 8.68314607,41.7876404 L33.2932584,41.7876404 C38.0123596,41.7876404 41.858427,37.941573 41.858427,33.2224719 L41.858427,8.61235955 C41.858427,3.86966292 38.0123596,0.0471910112 33.2932584,0.0471910112 Z M9.03707865,21.4483146 C8.44719101,21.4955056 7.92808989,21.0707865 7.88089888,20.4808989 L7.88089888,20.4573034 C7.85730337,20.1033708 7.83370787,19.7730337 7.83370787,19.4191011 C7.81011236,16.3044944 8.61235955,5.96966292 18.805618,4.6247191 C19.5134831,4.53033708 20.1741573,4.50674157 20.8348315,4.50674157 C31.1932584,4.57752809 33.505618,14.794382 33.505618,14.8651685 C33.647191,15.4550562 33.2696629,16.0213483 32.6797753,16.1629213 C32.0898876,16.3044944 31.5235955,15.9269663 31.3820225,15.3606742 C31.358427,15.3606742 29.3764045,6.60674157 20.811236,6.67752809 C20.2449438,6.67752809 19.6786517,6.7011236 19.041573,6.79550562 C10.7123596,7.73932584 10.0044944,16.4224719 9.98089888,19.4426966 C9.98089888,20.0089888 10.0044944,20.3157303 10.0044944,20.3157303 C10.0752809,20.8820225 9.6505618,21.4011236 9.03707865,21.4483146 Z M16.9651685,37.2337079 C16.3988764,37.4460674 15.7853933,37.1629213 15.5730337,36.6202247 C15.5494382,36.5730337 12.3640449,28.2674157 12.3640449,20.7640449 C12.2696629,15.4550562 14.2280899,9.93370787 20.5988764,9.32022472 C21.188764,9.29662921 21.7078652,9.76853933 21.7314607,10.358427 C21.7550562,10.9011236 21.3539326,11.3730337 20.8348315,11.4674157 C15.9505618,11.9865169 14.652809,15.6910112 14.558427,20.7640449 C14.5348315,27.6539326 17.6258427,35.841573 17.6494382,35.841573 C17.8146067,36.3842697 17.5314607,37.0213483 16.9651685,37.2337079 Z M24.8696629,20.4573034 C24.7988764,23.4539326 23.9258427,27.0640449 20.6932584,27.3235955 C17.4370787,27.0640449 16.5876404,23.4539326 16.5168539,20.4573034 C16.5404494,17.6258427 17.4606742,14.1808989 20.6932584,14.0157303 C23.9494382,14.2044944 24.8696629,17.6258427 24.8696629,20.4573034 Z M18.852809,31.4292135 C18.2629213,31.3820225 17.8146067,30.8629213 17.8617978,30.2730337 C17.9089888,29.6831461 18.4280899,29.2348315 19.0179775,29.2820225 C19.0179775,29.2820225 19.1595506,29.305618 19.4426966,29.305618 C20.905618,29.305618 25.0820225,28.9280899 26.7573034,25.2235955 C27.3707865,23.9022472 27.7011236,22.4393258 27.7011236,20.9764045 C27.7719101,16.0921348 24.0910112,12.3404494 24.0674157,12.3404494 C23.6426966,11.9157303 23.6426966,11.2314607 24.0674157,10.8067416 C24.4921348,10.3820225 25.1764045,10.3820225 25.6011236,10.8067416 C25.6719101,10.9011236 29.8719101,15.0067416 29.9191011,20.952809 C29.9191011,22.7224719 29.5179775,24.4921348 28.7629213,26.0966292 C26.4033708,31.0752809 21.1651685,31.452809 19.4662921,31.452809 C19.1123596,31.452809 18.8764045,31.4292135 18.852809,31.4292135 Z M32.2314607,30.2730337 C29.0460674,35.9595506 21.7078652,36.0775281 20.811236,36.1247191 L20.7168539,36.1247191 L20.6932584,36.1247191 C20.1033708,36.1483146 19.6078652,35.6764045 19.5606742,35.0865169 C19.5370787,34.4966292 20.0089888,34.0011236 20.5988764,33.9539326 L20.6932584,33.9539326 C20.7876404,34.0011236 28.0078652,33.788764 30.3202247,29.2348315 C31.7359551,26.6393258 31.9955056,22.5808989 31.9955056,20.5516854 C31.9955056,19.7258427 31.9719101,19.2539326 31.9719101,19.2539326 C31.9247191,18.6640449 32.3730337,18.1449438 32.9629213,18.0977528 C33.552809,18.0505618 34.0719101,18.4988764 34.1191011,19.1123596 C34.1191011,19.1359551 34.1426966,19.6786517 34.1426966,20.5516854 C34.1426966,22.7696629 33.9539326,27.0168539 32.2314607,30.2730337 Z" id="Shape" fill="url(#linearGradient-2)"></path>
+            </g>
+        </g>
+        <path d="" id="Path-4" stroke="#979797"></path>
+    </g>
+</svg>
