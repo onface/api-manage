@@ -47,7 +47,8 @@ if (user.type === 2) {
 POST /news
 # response pass
 {
-    status: 'pass'
+    status: 'pass'，
+    newsid: 'egvw423h35hy35hqgwfwsfw2'
 }
 # response fail
 {
@@ -67,22 +68,11 @@ $.ajax({
     url: '/news',
     dataType: 'json'
 }).done(function (res) {
-    /** res 数据格式
-        {
-            status: 'pass',
-            newsid: 'egvw423h35hy35hqgwfwsfw2'
-        }
-        {
-            status: 'fail',
-            code: 'sensitiveWords'
-        }
-     */
-     var failDict = {
-         'sensitiveWords': '包含敏感词',
-         'limit': '每分钟只能发布一条新闻'
-     }
      if (res.status === 'pass') {
-
+         var failDict = {
+             'sensitiveWords': '包含敏感词',
+             'limit': '每分钟只能发布一条新闻'
+         }
          /* newsAdd.js 只需要弹窗 */
          alert('添加新闻成功')
 
