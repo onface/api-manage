@@ -2,7 +2,7 @@
 
 > 使用一个组件或模块之前，应当知道它能解决的问题是什么，不能解决的问题是什么。使用的最佳实践是什么？
 
-> 建议读者看完这篇指引后，根据自己业务情况决定要不要使用 `api-manage` 。活动页面的零时网站和数据接口良好的项目不一定需要 `api-manage`。
+> 建议读者看完这篇指引后，根据自己业务情况决定要不要使用 `better-api` 。活动页面的临时网站和数据接口优秀的项目不一定需要 `better-api`。
 
 ## 为什么要封装
 
@@ -42,6 +42,23 @@ if (user.type === 2) {
 ### 统一管理和语义化接口
 
 有时候会遇到多个页面请求同一个接口的情况
+
+```shell
+POST /news
+# response pass
+{
+    status: 'pass'
+}
+# response fail
+{
+    status: 'fail',
+    code: 'sensitiveWords'
+}
+{
+    status: 'fail',
+    code: 'limit'
+}
+```
 
 ```js
 // 下面这段代码需要出现在 newsAdd.js 和 somePage.js 文件中
@@ -169,7 +186,7 @@ apiNews.post(
 3. **项目通用业务逻辑封装**：proxy （网络错误 alert 弹窗，或者将错误发送到服务器端,服务器超过规定时间未响应，则弹出错误）
 4. **具体接口语义化封装**： apiLogin(data, settings) settings.pass settings.error  settings.inactive
 
-`api-manage` 负责 3/4 的封装。底层一般由客户端环境（浏览器）提供。语法封装根据底层决定选择哪个库，或者根据业务情况自行编写。
+`better-api` 负责 3/4 的封装。底层一般由客户端环境（浏览器）提供。语法封装根据底层决定选择哪个库，或者根据业务情况自行编写。
 
 
 ## 字典辅助
